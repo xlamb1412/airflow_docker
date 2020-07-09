@@ -1,6 +1,7 @@
 version: '3.4'
+
 services:
- pg:
+ postgres:
   image: postgres:9.6
   environment:
    - POSTGRES_USER
@@ -15,7 +16,7 @@ services:
   image: puckel/docker-airflow:1.10.9
   restart: always
   depends_on:
-   - pg
+   - postgres
   environment:
    - LOAD_EX
    - EXECUTOR

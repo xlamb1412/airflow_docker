@@ -4,17 +4,17 @@ from airflow.contrib.operators.bigquery_operator import BigQueryOperator
 from airflow.contrib.operators.bigquery_check_operator import BigQueryCheckOperator
 
 dag_args = {
-    'owner': 'rebecca.vickery',
+    'owner': 'jacob.tran',
     'depends_on_past': False,
     'start_date': datetime(2020, 5, 31),
-    'email': ['rebeccavickeryds@gmail.com'],
+    'email': ['jacob.tran@gmail.com'],
     'email_on_failure': True,
     'email_on_retry': True,
     'retries': 1,
     'retry_delay': timedelta(minutes=3)}
 
 dag = DAG(
-    dag_id='covid_italy_daily',
+    dag_id='bigquery_demo',
     start_date=datetime(2020, 5, 31),
     default_args=dag_args,
     end_date=None,
